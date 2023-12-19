@@ -1,6 +1,6 @@
 An experiment in rendering progressive blur on macOS.
 
-<img src=".progressive-blur.jpg" width=1172>
+<img src="./progressive-blur.jpg" width=1172>
 
 
 ## More info
