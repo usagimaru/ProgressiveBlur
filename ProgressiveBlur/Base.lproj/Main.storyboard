@@ -711,7 +711,7 @@
                         <subviews>
                             <imageView horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="9Xk-7I-Usn">
                                 <rect key="frame" x="0.0" y="0.0" width="275" height="356"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="image2" id="ZWA-HX-7lh"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="image" id="ZWA-HX-7lh"/>
                             </imageView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="w1x-KI-Mdu" customClass="BaseView" customModule="ProgressiveBlur" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="275" height="356"/>
@@ -756,6 +756,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="image2" width="1200" height="675"/>
+        <image name="image" width="1200" height="675"/>
     </resources>
 </document>

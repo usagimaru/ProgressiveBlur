@@ -13,10 +13,6 @@ class ViewController: NSViewController {
 	@IBOutlet var backdropBar: FilterView!
 	@IBOutlet var rectangle: NSView!
 	
-	private var filterView: FilterView {
-		view as! FilterView
-	}
-
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
