@@ -6,9 +6,11 @@
 //
 
 import Cocoa
-import CoreImage
 
 class FilterView: NSView {
+	
+	var blurRadius: CGFloat = 50
+	var padding: CGFloat = 100
 	
 	func prepare() {
 		wantsLayer = true
@@ -16,8 +18,8 @@ class FilterView: NSView {
 		layerContentsRedrawPolicy = .onSetNeedsDisplay
 		layer?.backgroundColor = NSColor.clear.cgColor
 		
-		setVariableBlur(60)
-		//setGaussianBlur()
+		setVariableBlur(blurRadius)
+		//setGaussianBlur(blurRadius)
 	}
 	
 	private func verticalGradient(size: CGSize) -> CIImage? {
@@ -38,7 +40,7 @@ class FilterView: NSView {
 		
 		ctx.drawLinearGradient(gradient,
 							   start: .zero,
-							   end: CGPoint(x: 0, y: size.height),
+							   end: CGPoint(x: 0, y: size.height - padding),
 							   options: [.drawsBeforeStartLocation, .drawsAfterEndLocation])
 		
 		guard let image = ctx.makeImage()

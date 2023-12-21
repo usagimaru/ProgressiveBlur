@@ -20,7 +20,7 @@ class ViewController: NSViewController {
 		baseView.layer?.backgroundColor = NSColor.clear.cgColor
 		
 		rectangle.wantsLayer = true
-		rectangle.layer?.backgroundColor = NSColor.black.cgColor
+		rectangle.layer?.backgroundColor = NSColor.blue.cgColor
 		
 		Notify.receive(NSWindow.didResizeNotification) { notification in
 			if notification.object as? NSWindow == self.view.window {

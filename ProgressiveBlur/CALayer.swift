@@ -86,40 +86,6 @@ extension CALayer {
 		cornerCurve = curve
 	}
 	
-	func setShadow(offsetX: CGFloat = 0,
-				   offsetY: CGFloat,
-				   radius: CGFloat,
-				   opacity: Float,
-				   color: CGColor? = nil,
-				   path: CGPath? = nil,
-				   synchronize: Bool = true) {
-		if synchronize {
-			shadowOffset = CGSize(width: offsetX, height: offsetY)
-			shadowRadius = radius
-			shadowOpacity = opacity
-			shadowColor = color
-			shadowPath = path
-		}
-		else {
-			// アピアランス更新時に影がうまく反映されないことがあるようなので、実行を遅らせてみる
-			DispatchQueue.main.async { [self] in
-				shadowOffset = CGSize(width: offsetX, height: offsetY)
-				shadowRadius = radius
-				shadowOpacity = opacity
-				shadowColor = color
-				shadowPath = path
-			}
-		}
-	}
-	
-	func removeShadow() {
-		shadowOffset = .zero
-		shadowRadius = 0
-		shadowOpacity = 0
-		shadowColor = nil
-		shadowPath = nil
-	}
-	
 	/// CALayer用のアニメーションブロック
 	class func animate(enabled: Bool, duration: TimeInterval? = nil, animations: () -> Void, completionHandler: (() -> Void)? = nil) {
 		CATransaction.begin()
@@ -140,49 +106,6 @@ extension CALayer {
 	/// アニメーション無効化ブロック
 	class func disableAnimations(_ animationHandler: () -> Void, completionHandler: (() -> Void)? = nil) {
 		animate(enabled: false, animations: animationHandler, completionHandler: completionHandler)
-	}
-	
-	/// 一部の暗黙的アニメーションを無効化
-	func disableSpecificImplicitAnimations() {
-		let actions = [
-			"anchorPoint": NSNull(),
-			"anchorPointZ": NSNull(),
-			"masksToBounds": NSNull(),
-			"bounds": NSNull(),
-			"sublayers": NSNull(),
-			"position": NSNull(),
-			"transform": NSNull(),
-			"onOrderIn": NSNull(),
-			"onOrderout": NSNull(),
-			// "transition" : NSNull(),
-		]
-		
-		self.actions = actions
-	}
-	
-	/// 暗黙的アニメーションを無効化
-	func disableImplicitAnimations() {
-		let actions = [
-			"anchorPoint": NSNull(),
-			"anchorPointZ": NSNull(),
-			"masksToBounds": NSNull(),
-			"contents": NSNull(),
-			"contentsScale": NSNull(),
-			"contentsCenter": NSNull(),
-			"cornerRadius": NSNull(),
-			"borderWidth": NSNull(),
-			"borderColor": NSNull(),
-			"opacity": NSNull(),
-			"shadowColor": NSNull(),
-			"shadowOpacity": NSNull(),
-			"shadowOffset": NSNull(),
-			"shadowRadius": NSNull(),
-			"shadowPath": NSNull(),
-			"onOrderIn": NSNull(),
-			"onOrderout": NSNull(),
-		]
-		
-		self.actions = actions
 	}
 	
 }

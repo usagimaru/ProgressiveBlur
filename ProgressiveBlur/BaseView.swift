@@ -21,7 +21,6 @@ class BaseView: NSView {
 			.activeInKeyWindow,
 			.mouseEnteredAndExited,
 			.mouseMoved,
-			//.assumeInside,
 			.inVisibleRect,
 			.enabledDuringMouseDrag,
 		]
@@ -40,7 +39,6 @@ class BaseView: NSView {
 	
 	override func mouseMoved(with event: NSEvent) {
 		super.mouseMoved(with: event)
-		print("\(event.locationInWindow)")
 		
 		CALayer.disableAnimations {
 			if shape.superlayer == nil {
