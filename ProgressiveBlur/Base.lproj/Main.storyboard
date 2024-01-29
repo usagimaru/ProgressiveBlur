@@ -706,33 +706,33 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="ProgressiveBlur" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="275" height="356"/>
+                        <rect key="frame" x="0.0" y="0.0" width="275" height="409"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <imageView horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="9Xk-7I-Usn">
-                                <rect key="frame" x="0.0" y="0.0" width="275" height="356"/>
+                                <rect key="frame" x="0.0" y="0.0" width="275" height="409"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="image" id="ZWA-HX-7lh"/>
                             </imageView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="w1x-KI-Mdu" customClass="BaseView" customModule="ProgressiveBlur" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="275" height="356"/>
+                                <rect key="frame" x="0.0" y="0.0" width="275" height="409"/>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="XCO-n8-AkB">
-                                <rect key="frame" x="118" y="20" width="40" height="316"/>
+                                <rect key="frame" x="118" y="20" width="40" height="369"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="2FF-AY-Rhm"/>
                                 </constraints>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="iBU-BG-z3Y" customClass="FilterView" customModule="ProgressiveBlur" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="275" height="356"/>
+                                <rect key="frame" x="0.0" y="0.0" width="275" height="409"/>
                             </customView>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="iBU-BG-z3Y" secondAttribute="trailing" id="2qd-NJ-WP0"/>
                             <constraint firstItem="9Xk-7I-Usn" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="6h3-nz-tiK"/>
                             <constraint firstItem="XCO-n8-AkB" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="Aov-9j-eTu"/>
+                            <constraint firstAttribute="bottom" secondItem="iBU-BG-z3Y" secondAttribute="bottom" id="HDG-Xj-OSo"/>
                             <constraint firstItem="9Xk-7I-Usn" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="JCK-to-jbb"/>
                             <constraint firstAttribute="trailing" secondItem="9Xk-7I-Usn" secondAttribute="trailing" id="Xlv-Xo-TYZ"/>
-                            <constraint firstAttribute="bottom" secondItem="iBU-BG-z3Y" secondAttribute="bottom" id="YEi-Gc-9NS"/>
                             <constraint firstItem="w1x-KI-Mdu" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="aiT-lQ-IBL"/>
                             <constraint firstItem="iBU-BG-z3Y" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="bs3-7o-tJR"/>
                             <constraint firstAttribute="bottom" secondItem="9Xk-7I-Usn" secondAttribute="bottom" id="ki2-6n-EpA"/>

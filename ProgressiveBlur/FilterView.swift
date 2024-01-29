@@ -10,7 +10,7 @@ import Cocoa
 class FilterView: NSView {
 	
 	var blurRadius: CGFloat = 50
-	var padding: CGFloat = 100
+	var padding: CGFloat = 0
 	
 	func prepare() {
 		wantsLayer = true
@@ -32,16 +32,27 @@ class FilterView: NSView {
 								  bitmapInfo: CGImageAlphaInfo.none.rawValue)
 		else { return nil }
 		
-		let colors = [NSColor.black.cgColor, NSColor.white.cgColor] as CFArray
+		/*
+		 The effect range seems to depend on the bounds of the window, even if the size of the NSView is changed.
+		 */
+		
+		let colors: [NSColor] = [
+			.black,
+			.black,
+			.black,
+			.white,
+		]
+		let cgcolors = colors.map { $0.cgColor } as CFArray
+		
 		guard let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceGray(),
-										colors: colors,
+										colors: cgcolors,
 										locations: nil)
 		else { return nil }
 		
 		ctx.drawLinearGradient(gradient,
-							   start: .zero,
-							   end: CGPoint(x: 0, y: size.height - padding),
-							   options: [.drawsBeforeStartLocation, .drawsAfterEndLocation])
+							   start: CGPoint(x: 0, y: -padding),
+							   end: CGPoint(x: 0, y: size.height + padding),
+							   options: []) //[.drawsBeforeStartLocation, .drawsAfterEndLocation])
 		
 		guard let image = ctx.makeImage()
 		else { return nil }

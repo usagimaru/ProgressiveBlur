@@ -22,7 +22,7 @@ class ViewController: NSViewController {
 		rectangle.wantsLayer = true
 		rectangle.layer?.backgroundColor = NSColor.blue.cgColor
 		
-		Notify.receive(NSWindow.didResizeNotification) { notification in
+		Notify.receive(NSWindow.didResizeNotification, sender: view.window) { notification in
 			if notification.object as? NSWindow == self.view.window {
 				self.backdropBar.prepare()
 			}
